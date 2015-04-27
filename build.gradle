@@ -1,0 +1,44 @@
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.1.0'
+        classpath 'me.tatarka:gradle-retrolambda:2.5.0'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "hu.retrolambda.encoding"
+        minSdkVersion 21
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+
+    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_7
+//        targetCompatibility JavaVersion.VERSION_1_7
+
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+retrolambda {
+    javaVersion JavaVersion.VERSION_1_7
+}
